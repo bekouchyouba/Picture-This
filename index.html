@@ -4,18 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Picture This!</title>
+  <title>Picture This! | My Really Cool Blog Post</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;700&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="header">
-    <div class="title">
-      <h1>Picture This!</h1>
-      <h4>My Really Cool Blog Post</h4>
+  <header class="banner">
+
+    <div class="banner__text">
+      <h1 class="banner__heading">Picture This!</h1>
+      <p class="banner__subheading">My Really Cool Blog Post</p>
     </div>
-    <img src="images/museum.jpg" alt="placeholder">
+
+    <figure class="banner__photo">
+      <picture>
+        <!-- 960px and wider: square crop, displayed at half the viewport -->
+        <source media="(min-width: 1600px)"
+                srcset="images/gallery-sq-800.jpg 1x,
+                        images/gallery-sq-1600.jpg 2x,
+                        images/gallery-sq-2400.jpg 3x">
+        <source media="(min-width: 1280px)"
+                srcset="images/gallery-sq-640.jpg 1x,
+                        images/gallery-sq-1280.jpg 2x,
+                        images/gallery-sq-1920.jpg 3x">
+        <source media="(min-width: 960px)"
+                srcset="images/gallery-sq-480.jpg 1x,
+                        images/gallery-sq-960.jpg 2x,
+                        images/gallery-sq-1440.jpg 3x">
+
+        <!-- narrower than 960px: landscape, displayed full width -->
+        <source media="(min-width: 720px)"
+                srcset="images/gallery-wide-720.jpg 1x,
+                        images/gallery-wide-1440.jpg 2x,
+                        images/gallery-wide-2160.jpg 3x">
+        <source media="(min-width: 480px)"
+                srcset="images/gallery-wide-480.jpg 1x,
+                        images/gallery-wide-960.jpg 2x,
+                        images/gallery-wide-1440.jpg 3x">
+
+        <!-- default (320px and up) -->
+        <img src="images/gallery-wide-320.jpg"
+             srcset="images/gallery-wide-320.jpg 1x,
+                     images/gallery-wide-640.jpg 2x,
+                     images/gallery-wide-960.jpg 3x"
+             alt="A grand museum gallery with green walls, rows of gold-framed paintings and blue sofas on a parquet floor">
+      </picture>
+    </figure>
 
   </header>
 </body>
